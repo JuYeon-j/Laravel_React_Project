@@ -9,7 +9,7 @@ class BoardRepository implements  CrudInterface {
 
     public function getAll()
     {
-       $boards = Board::withCount('tasks')->get();
+       $boards = Board::withCount('tasks')->orderBy('id','desc')->get();
        return $boards;
     }
 

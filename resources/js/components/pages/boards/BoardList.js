@@ -1,12 +1,13 @@
 import React from "react";
 import {Card, Button, Badge, Spinner} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import Axios from "axios";
+import {PUBLIC_URL} from "../../../constants";
 
 class BoardList extends React.Component{
     state ={
         boardList: [],
         isLoading: false,
-
 
     };
     componentDidMount() {
@@ -26,10 +27,23 @@ class BoardList extends React.Component{
     }
 
     render() {
-        console.log('coming render');
+
         return (
             <>
-                <h2>Board List</h2>
+                <div className="header-part">
+                    <div className="float-left">
+                        <h2>Board List{" "}
+                            <Badge variant="primary">{this.state.boardList.length}</Badge>
+                        </h2>
+                    </div>
+                    <div className="float-right">
+                        <Link to={`${PUBLIC_URL}boards/create`} className="btn btn-info">+ Create New</Link>
+                    </div>
+                    <div className="clearfix">
+
+                    </div>
+                </div>
+
                 {
                     this.state.isLoading && (
                         <div className="text-center">
@@ -40,10 +54,10 @@ class BoardList extends React.Component{
                     )
                 }
                 {this.state.boardList.map((board,index)=>(
-                    <Card key={index}>
+                    <Card key={index} className="mt-3">
                         <Card.Header>
                             {board.name} {" "}
-                            <Badge variant="primary">1</Badge>
+                            <Badge variant="primary">{board.tasks_count}</Badge>
                         </Card.Header>
                         <Card.Body>
                             <Card.Text>

@@ -14,14 +14,11 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact";
 import BoardList from "./pages/boards/BoardList";
-
+import BoardCreate from "./pages/boards/BoardCreate";
+import {PUBLIC_URL} from "../constants";
 
 class App extends Component {
-    state = {
-        PUBLIC_URL: "/ju/",
-    };
     render(){
-
         return (
             <div>
                 <Router>
@@ -30,15 +27,19 @@ class App extends Component {
 
                         <Container className="p-4">
                             <Switch>
-                                <Route path={`${this.state.PUBLIC_URL}about`}>
+                                <Route path={`${PUBLIC_URL}about`}>
                                     <About />
                                 </Route>
-                                <Route path={`${this.state.PUBLIC_URL}contact`}>
+                                <Route path={`${PUBLIC_URL}contact`}>
                                     <Contact />
                                 </Route>
-                                <Route path={`${this.state.PUBLIC_URL}boards`}>
+                                <Route path={`${PUBLIC_URL}boards/create`}>
+                                    <BoardCreate />
+                                </Route>
+                                <Route path={`${PUBLIC_URL}boards`}>
                                     <BoardList />
                                 </Route>
+
                             </Switch>
                             <Footer />
                         </Container>
