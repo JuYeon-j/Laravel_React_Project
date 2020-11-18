@@ -22,9 +22,9 @@ class TaskRepository implements  CrudInterface {
     public function create(Request $request)
     {
         $task = new Task();
-        $task->name = $request->name;
-        $task->description = $request->description;
-        $task->board_id= $request->board_id;;
+        $task->comment = $request->comment;
+        $task->board_id= $request->board_id;
+        $task->status = 0;
         $task->save();
         return $task;
 
@@ -33,9 +33,9 @@ class TaskRepository implements  CrudInterface {
     public function edit(Request $request, $id)
     {
         $task = $this->findById($id);
-        $task->name = $request->name;
-        $task->description = $request->description;
+        $task->comment = $request->comment;
         $task->board_id = $request->board_id;
+        $task->status = $request->status;
         $task->save();
         return $task;
 

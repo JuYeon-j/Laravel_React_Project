@@ -49,12 +49,11 @@ class TasksController extends Controller
         $formData = $request->all();
 
         $validator = \Validator::make($formData,[
-            'name'=>'required',
-            'description'=>'required',
+            'comment'=>'required',
             'board_id'=>'required'
         ], [
-                'name.required'=>'Please give project name',
-                'description.required'=>'Please give project description',
+                'comment.required'=>'Please give comment',
+
             ]
         );
 
@@ -88,12 +87,11 @@ class TasksController extends Controller
         $formData = $request->all();
 
         $validator = \Validator::make($formData,[
-            'name'=>'required',
-            'description'=>'required',
+            'comment'=>'required',
             'board_id'=>'required'
         ], [
-                'name.required'=>'Please give task name',
-                'description.required'=>'Please give task description',
+                'comment.required'=>'Please give comment',
+
             ]
         );
 

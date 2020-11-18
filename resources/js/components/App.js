@@ -15,6 +15,7 @@ import About from "./pages/About"
 import Contact from "./pages/Contact";
 import BoardList from "./pages/boards/BoardList";
 import BoardCreate from "./pages/boards/BoardCreate";
+import BoardView from './pages/boards/BoardView';
 import {PUBLIC_URL} from "../constants";
 
 class App extends Component {
@@ -24,24 +25,24 @@ class App extends Component {
                 <Router>
                     <Header />
                     <div>
-
                         <Container className="p-4">
-                            <Switch>
-                                <Route path={`${PUBLIC_URL}about`}>
-                                    <About />
-                                </Route>
-                                <Route path={`${PUBLIC_URL}contact`}>
-                                    <Contact />
-                                </Route>
-                                <Route path={`${PUBLIC_URL}boards/create`}>
-                                    <BoardCreate />
-                                </Route>
-                                <Route path={`${PUBLIC_URL}boards`}>
-                                    <BoardList />
-                                </Route>
 
+                            <Switch>
+                                <Route path={`${PUBLIC_URL}about`} exat={true} component={About} />
+
+                                <Route path={`${PUBLIC_URL}contact`} exat={true} component={Contact} />
+
+                                <Route path={`${PUBLIC_URL}boards/view/:id`} exat={true} component={BoardView} />
+
+                                <Route path={`${PUBLIC_URL}boards/create`} exat={true} component={BoardCreate} />
+
+                                <Route path={`${PUBLIC_URL}boards`} exat={true} component={BoardList} />
+
+                                <Route path={`${PUBLIC_URL}`} exat={true} component={Home} />
                             </Switch>
+
                             <Footer />
+
                         </Container>
 
 

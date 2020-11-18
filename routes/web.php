@@ -19,6 +19,9 @@ Route::get('/{path?}', function () {
 Route::get('ju/{path?}/{path2?}', function () {
     return view('layouts/app');
 });
+Route::get('ju/{path?}/{path2?}/{path3?}', function () {
+    return view('layouts/app');
+});
 
 Auth::routes();
 

@@ -54,19 +54,23 @@ class BoardList extends React.Component{
                     )
                 }
                 {this.state.boardList.map((board,index)=>(
-                    <Card key={index} className="mt-3">
-                        <Card.Header>
-                            {board.name} {" "}
-                            <Badge variant="primary">{board.tasks_count}</Badge>
-                        </Card.Header>
+                    <Card key={index}>
                         <Card.Body>
-                            <Card.Text>
-                                {board.description}
-                            </Card.Text>
-                            <Button variant="primary" className="mr-2">View</Button>
-                            <Button variant="success" className="mr-2">Edit</Button>
-                            <Button variant="danger" className="mr-2">Delete</Button>
+                            <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={`${PUBLIC_URL}boards/view/${board.id}`} >{board.name}</Link>
+                            {" "}
+                            <Badge variant="primary">{board.tasks_count}</Badge>
+                            <div className="float-right">{board.user_id}</div>
                         </Card.Body>
+                        {/*<Card.Body>*/}
+                        {/*    <Card.Text>*/}
+                        {/*        {board.description}*/}
+                        {/*    </Card.Text>*/}
+
+                        {/*    <Link to={`${PUBLIC_URL}boards/view/${board.id}`} className="btn btn-primary mr-2">View</Link>*/}
+
+                        {/*    <Button variant="success" className="mr-2">Edit</Button>*/}
+                        {/*    <Button variant="danger" className="mr-2">Delete</Button>*/}
+                        {/*</Card.Body>*/}
                     </Card>
                 ))}
 
