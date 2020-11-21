@@ -3,13 +3,14 @@ import {Card, Button, Badge, Spinner, Form} from 'react-bootstrap'
 import {Link, withRouter} from 'react-router-dom'
 import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
-import {storeNewBoard} from "../../../services/BoardService";
+import {storeNewBoard, updateBoard} from "../../../services/BoardService";
 
-class BoardCreate extends React.Component{
+class BoardEdit extends React.Component{
     state = {
         isLoading: false,
-        name:"",
-        description:"",
+        id: this.props.board.id,
+        name: this.props.board.name,
+        description: this.props.board.description,
         errors:{},
 
     };
@@ -33,15 +34,17 @@ class BoardCreate extends React.Component{
             name: this.state.name,
             description: this.state.description,
         };
-        const response = await storeNewBoard(postBody);
+        const response = await updateBoard(this.state.id, postBody);
         if(response.success){
             this.setState({
                 name:"",
                 description:"",
                 isLoading:false,
             });
-            history.push(`${PUBLIC_URL}boards`);
+            // history.push(`${PUBLIC_URL}boards`);
             // alert('Board Added');
+            this.props.onCompleteBoardEdit();
+
         }else{
             this.setState({
                 errors:response.errors,
@@ -56,17 +59,6 @@ class BoardCreate extends React.Component{
 
         return (
             <>
-                <div className="header-part">
-                    <div className="float-left">
-                        <h2>글쓰기</h2>
-                    </div>
-                    <div className="float-right">
-                        <Link to={`${PUBLIC_URL}boards`} className="btn btn-info">취소</Link>
-                    </div>
-                    <div className="clearfix">
-
-                    </div>
-                </div>
 
                 <Card>
                     <Card.Body>
@@ -79,7 +71,7 @@ class BoardCreate extends React.Component{
                             <Form.Group controlId="name">
                                 <Form.Label>제목</Form.Label>
                                 <Form.Control type="text"
-                                              placeholder="제목을 입력하세요"
+                                              placeholder="Enter Title"
                                               name="name"
                                               value={this.state.name}
                                               onChange={(e)=>this.changeInput(e)}/>
@@ -90,7 +82,7 @@ class BoardCreate extends React.Component{
                             <Form.Group controlId="description">
                                 <Form.Label>내용</Form.Label>
                                 <Form.Control type="text"
-                                              placeholder="내용을 입력하세요"
+                                              placeholder="Enter Description"
                                               as="textarea"
                                               rows="5"
                                               name="description"
@@ -110,7 +102,7 @@ class BoardCreate extends React.Component{
                                     </Button>
                             )}
                             {!this.state.isLoading && (
-                                    <Button variant="primary" type="submit">
+                                    <Button variant="outline-primary" className="btn-sm" type="submit">
                                         등록
                                     </Button>
                             )}
@@ -123,4 +115,4 @@ class BoardCreate extends React.Component{
     }
 }
 
-export default withRouter(BoardCreate);
+export default withRouter(BoardEdit);

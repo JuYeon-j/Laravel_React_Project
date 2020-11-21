@@ -44,6 +44,7 @@ class BoardRepository implements  CrudInterface {
     public function delete($id)
     {
         $board = $this->findById($id);
+        $board->tasks()->delete();
         $board->delete();
         return $board;
     }

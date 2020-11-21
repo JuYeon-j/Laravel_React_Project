@@ -3,14 +3,18 @@ import {Card, Button, Badge, Spinner, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
-import {storeNewBoard} from "../../../services/BoardService";
+import {storeNewBoard, updateBoard, deleteBoard} from "../../../services/BoardService";
 import TaskCreate from "../tasks/TaskCreate";
+import BoardEdit from "./BoardEdit";
+import TaskEdit from "../tasks/TaskEdit";
+import BoardList from "./BoardList";
 
 class BoardView extends React.Component{
     state ={
         board:{},
         taskList: [],
         isLoading: false,
+        toggleEditBoard:false,
 
     };
     componentDidMount() {
@@ -33,6 +37,7 @@ class BoardView extends React.Component{
         });
     }
 
+
     onCompleteTaskCreate = (task) => {
         let tasks = this.state.taskList;
         tasks.unshift(task);
@@ -41,25 +46,72 @@ class BoardView extends React.Component{
         });
     }
 
+    toggleEditBoard = () =>{
+        this.setState({
+           toggleEditBoard: !this.state.toggleEditBoard,
+        });
+    }
+
+    onCompleteBoardEdit = (task) => {
+        this.getBoardDetails();
+        this.toggleEditBoard();
+
+    }
+
+    onCompleteTaskEdit = (task) => {
+        this.getBoardDetails();
+
+    }
+
+    deleteBoard = async (id)=>{
+
+        const {history} = this.props;
+        this.setState({isLoading: true});
+
+        const response = await deleteBoard(id);
+        if(response.success){
+            history.push(`${PUBLIC_URL}boards`);
+        }else{
+            this.setState({
+                errors:response.errors,
+                isLoading:false,
+            });
+
+        }
+    }
+
     render() {
+
         return (
             <>
                 <div className="header-part">
-                    <div className="float-left">
-                        <h2>{this.state.board.name}
-                            <Badge variant="primary">{this.state.taskList.length}</Badge>
-                        </h2>
-                    </div>
-                    <div className="float-right">
-                        <Button className="btn btn-info mr-2">Edit</Button>
-                        {/*<Button className-"btn btn-info mr-2" onClick={()=> this.toggleAddTask()}> +Add Task </Button>*/}
-                        {/*<Link to={`${PUBLIC_URL}boards/create`} className="btn btn-info">+ Create Task</Link>*/}
-                    </div>
-                    <div className="clearfix">
+                    <div>
+                        {!this.state.toggleEditBoard && (
+                            <>
+
+                                <h2>{this.state.board.name}{" "}
+                                    <Badge variant="primary">{this.state.taskList.length}</Badge>
+                                </h2>
+                                <hr />
+                                <p>{this.state.board.description}</p>
+                                <hr />
+                                <TaskEdit taskList={this.state.taskList} isDetailsView={true} onCompleteTaskEdit={this.onCompleteTaskEdit}/>
+
+
+                                <TaskCreate board_id={this.props.match.params.id} onCompleteTaskCreate={this.onCompleteTaskCreate}/>
+
+                            </>
+                        )}
+                        {this.state.toggleEditBoard && (
+                            <>
+                                <BoardEdit board={this.state.board} onCompleteBoardEdit={this.onCompleteBoardEdit}/>
+                            </>
+                        )}
 
                     </div>
+                    <div className="clearfix">
+                    </div>
                 </div>
-                <div>{this.state.board.description}</div>
 
                 {
                     this.state.isLoading && (
@@ -71,25 +123,16 @@ class BoardView extends React.Component{
                     )
                 }
 
-                {this.state.taskList.map((task ,index)=>(
-                    <Card key={index}>
-                        <Card.Body>
-                            {task.comment} {" "}
-                            <Badge variant="primary">{task.tasks_count}</Badge>
-                        </Card.Body>
-                        {/*<Card.Body>*/}
-                        {/*    <Card.Text>*/}
-                        {/*        {task.description}*/}
-                        {/*    </Card.Text>*/}
-                        {/*    <Button variant="primary" className="mr-2">View</Button>*/}
-                        {/*    <Button variant="success" className="mr-2">Edit</Button>*/}
-                        {/*    <Button variant="danger" className="mr-2">Delete</Button>*/}
-                        {/*</Card.Body>*/}
+                <br />
+                <div className="float-left">
+                    <Button className="btn btn-success mr-2"
+                            onClick={()=>this.toggleEditBoard()}>
+                        {!this.state.toggleEditBoard && <span>수정</span>}
+                        {this.state.toggleEditBoard && <span>취소</span>}
+                    </Button>
+                    <Button variant="danger" className="mr-2" onClick={()=>this.deleteBoard(this.props.match.params.id)}>삭제</Button>
 
-                    </Card>
-                ))}
-
-                <TaskCreate board_id={this.props.match.params.id} onCompleteTaskCreate={this.onCompleteTaskCreate}/>
+                </div>
 
 
 

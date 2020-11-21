@@ -78,8 +78,8 @@ class TaskCreate extends React.Component{
                             )}
 
                             {!this.state.isLoading && (
-                                <Button variant="primary" type="submit" className="float-right">
-                                    Save
+                                <Button variant="outline-primary" type="submit" className="btn-sm float-right">
+                                    등록
                                 </Button>
                             )}
 

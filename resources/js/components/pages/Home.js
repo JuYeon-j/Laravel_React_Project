@@ -4,7 +4,12 @@ import {Container} from "react-bootstrap";
 function Home() {
     return (
         <Container>
-            <h2>Home Page</h2>
+            <div className="card card-body">
+                <h2>Welcome to Home Page</h2>
+               
+
+            </div>
+            
         </Container>
     );
 }

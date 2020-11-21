@@ -17,13 +17,33 @@ import BoardList from "./pages/boards/BoardList";
 import BoardCreate from "./pages/boards/BoardCreate";
 import BoardView from './pages/boards/BoardView';
 import {PUBLIC_URL} from "../constants";
+import Register from "./pages/auth/Register";
+import Login from "./pages/auth/Login";
+import {checkIfAuthenticated} from "../services/AuthService";
+import AuthenticatedRoutes from './AuthenticatedRoutes';
 
 class App extends Component {
+    state={
+        user:{},
+        isLoggedIn: false,
+    };
+
+    componentDidMount(){
+        if(checkIfAuthenticated()){
+            console.log("checkIfAuthenticated user data", checkIfAuthenticated());
+            this.setState({
+                user:checkIfAuthenticated(),
+                isLoggedIn:true,
+            });
+        }
+        
+    }
+
     render(){
         return (
             <div>
                 <Router>
-                    <Header />
+                    <Header authData={this.state}/>
                     <div>
                         <Container className="p-4">
 
@@ -36,7 +56,13 @@ class App extends Component {
 
                                 <Route path={`${PUBLIC_URL}boards/create`} exat={true} component={BoardCreate} />
 
-                                <Route path={`${PUBLIC_URL}boards`} exat={true} component={BoardList} />
+                                {/* <AuthenticatedRoutes authed={this.state.isLoggedIn} path={`${PUBLIC_URL}boards`} component={BoardList} /> */}
+
+                                <Route path={`${PUBLIC_URL}boards`} authed={this.state.user} exat={true} component={BoardList} />
+
+                                <Route path={`${PUBLIC_URL}register`} exat={true} component={Register} />
+
+                                <Route path={`${PUBLIC_URL}login`} exat={true} component={Login} />
 
                                 <Route path={`${PUBLIC_URL}`} exat={true} component={Home} />
                             </Switch>

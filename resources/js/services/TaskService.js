@@ -12,3 +12,21 @@ export const storeNewTask = async (data) => {
             return res.data;
     });
 }
+
+export const updateTask = async (id, data) => {
+
+    return await Axios.put(`https://reactlaravel.test/api/tasks/${id}`,
+        data)
+        .then((res)=>{
+            console.log('res',res);
+            return res.data;
+        });
+}
+
+export const deleteTask = async (id) => {
+    return await Axios.delete(`https://reactlaravel.test/api/tasks/${id}`)
+        .then((res)=>{
+            console.log('res',res);
+            return res.data;
+        });
+}

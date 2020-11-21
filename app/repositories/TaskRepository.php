@@ -35,7 +35,6 @@ class TaskRepository implements  CrudInterface {
         $task = $this->findById($id);
         $task->comment = $request->comment;
         $task->board_id = $request->board_id;
-        $task->status = $request->status;
         $task->save();
         return $task;
 
