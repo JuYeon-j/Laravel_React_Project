@@ -9,7 +9,7 @@ export const getBoardList = async () =>{
 };
 
 export const storeNewBoard = async (data) => {
-    data.user_id = 1;
+
     return await Axios.post("https://reactlaravel.test/api/boards",data)
         .then((res)=>{
             // console.log('res',res);
@@ -18,7 +18,7 @@ export const storeNewBoard = async (data) => {
 }
 
 export const updateBoard = async (id, data) => {
-    data.user_id = 1;
+
     return await Axios.put(`https://reactlaravel.test/api/boards/${id}`,
         data)
         .then((res)=>{

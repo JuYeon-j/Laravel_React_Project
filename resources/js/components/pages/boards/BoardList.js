@@ -5,6 +5,7 @@ import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
 import BoardView from "./BoardView";
 import {getBoardList} from "../../../services/BoardService";
+import {checkIfAuthenticated} from "../../../services/AuthService";
 
 class BoardList extends React.Component{
     
@@ -12,12 +13,14 @@ class BoardList extends React.Component{
     state ={
         boardList: [],
         isLoading: false,
+     
 
     };
 
     componentDidMount() {
         this.getBoardLists();
-        console.log('this.props', this.props);
+       
+        // console.log('this.props', this.props);
     }
 
     getBoardLists = async () => {
@@ -76,7 +79,7 @@ class BoardList extends React.Component{
                                 {board.name}</Link>
                             {" "}
                             <Badge variant="primary">{board.tasks_count}</Badge>
-                            <div className="float-right">{board.user_id}</div>
+                            <div className="float-right">{board.user_name}</div>
                        
                         </Card.Body>
                     </Card>

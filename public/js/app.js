@@ -85897,9 +85897,9 @@ var App = /*#__PURE__*/function (_Component) {
         path: "".concat(_constants__WEBPACK_IMPORTED_MODULE_12__["PUBLIC_URL"], "boards/view/:id"),
         exat: true,
         component: _pages_boards_BoardView__WEBPACK_IMPORTED_MODULE_11__["default"]
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AuthenticatedRoutes__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        authed: this.state.isLoggedIn,
         path: "".concat(_constants__WEBPACK_IMPORTED_MODULE_12__["PUBLIC_URL"], "boards/create"),
-        exat: true,
         component: _pages_boards_BoardCreate__WEBPACK_IMPORTED_MODULE_10__["default"]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "".concat(_constants__WEBPACK_IMPORTED_MODULE_12__["PUBLIC_URL"], "boards"),
@@ -86543,18 +86543,18 @@ var Register = /*#__PURE__*/function (_React$Component) {
                     password_confirmation: "",
                     isLoading: false,
                     errors: {}
-                  });
+                  }); // localStorage.setItem("loginData",JSON.stringify(response));
 
-                  localStorage.setItem("loginData", JSON.stringify(response));
+
+                  window.location.href = _constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"] + "login";
                 } else {
                   console.log("response.errors", response.errors);
 
                   _this.setState({
                     errors: response.errors,
                     isLoading: false
-                  });
+                  }); // localStorage.setItem("loginData",null);
 
-                  localStorage.setItem("loginData", null);
                 }
 
               case 12:
@@ -86705,6 +86705,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
 /* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
+/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -86742,6 +86743,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var BoardCreate = /*#__PURE__*/function (_React$Component) {
   _inherits(BoardCreate, _React$Component);
 
@@ -86762,7 +86764,8 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
       isLoading: false,
       name: "",
       description: "",
-      errors: {}
+      errors: {},
+      user: {}
     });
 
     _defineProperty(_assertThisInitialized(_this), "changeInput", function (e) {
@@ -86786,7 +86789,9 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
 
                 postBody = {
                   name: _this.state.name,
-                  description: _this.state.description
+                  description: _this.state.description,
+                  user_id: _this.state.user.id,
+                  user_name: _this.state.user.name
                 };
                 _context.next = 6;
                 return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_6__["storeNewBoard"])(postBody);
@@ -86828,7 +86833,14 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
 
   _createClass(BoardCreate, [{
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()) {
+        console.log("BoardCreate", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])());
+        this.setState({
+          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()
+        });
+      }
+    }
   }, {
     key: "render",
     value: function render() {
@@ -86988,6 +87000,7 @@ var BoardEdit = /*#__PURE__*/function (_React$Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                console.log('he2');
                 e.preventDefault();
                 history = _this.props.history;
 
@@ -86997,12 +87010,14 @@ var BoardEdit = /*#__PURE__*/function (_React$Component) {
 
                 postBody = {
                   name: _this.state.name,
-                  description: _this.state.description
+                  description: _this.state.description,
+                  user_id: _this.props.board.user_id,
+                  user_name: _this.props.board.user_name
                 };
-                _context.next = 6;
+                _context.next = 7;
                 return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_6__["updateBoard"])(_this.state.id, postBody);
 
-              case 6:
+              case 7:
                 response = _context.sent;
 
                 if (response.success) {
@@ -87014,6 +87029,8 @@ var BoardEdit = /*#__PURE__*/function (_React$Component) {
                   // alert('Board Added');
 
 
+                  console.log('he');
+
                   _this.props.onCompleteBoardEdit();
                 } else {
                   _this.setState({
@@ -87023,7 +87040,7 @@ var BoardEdit = /*#__PURE__*/function (_React$Component) {
 
                 }
 
-              case 8:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -87119,6 +87136,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
 /* harmony import */ var _BoardView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BoardView */ "./resources/js/components/pages/boards/BoardView.js");
 /* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
+/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -87148,6 +87166,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -87219,8 +87238,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
   _createClass(BoardList, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.getBoardLists();
-      console.log('this.props', this.props);
+      this.getBoardLists(); // console.log('this.props', this.props);
     }
   }, {
     key: "render",
@@ -87258,7 +87276,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
           variant: "primary"
         }, board.tasks_count), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "float-right"
-        }, board.user_id)));
+        }, board.user_name)));
       }));
     }
   }]);
@@ -87289,10 +87307,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
 /* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
-/* harmony import */ var _tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tasks/TaskCreate */ "./resources/js/components/pages/tasks/TaskCreate.js");
-/* harmony import */ var _BoardEdit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
-/* harmony import */ var _tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../tasks/TaskEdit */ "./resources/js/components/pages/tasks/TaskEdit.js");
-/* harmony import */ var _BoardList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./BoardList */ "./resources/js/components/pages/boards/BoardList.js");
+/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
+/* harmony import */ var _tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../tasks/TaskCreate */ "./resources/js/components/pages/tasks/TaskCreate.js");
+/* harmony import */ var _BoardEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
+/* harmony import */ var _tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../tasks/TaskEdit */ "./resources/js/components/pages/tasks/TaskEdit.js");
+/* harmony import */ var _BoardList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./BoardList */ "./resources/js/components/pages/boards/BoardList.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -87334,6 +87353,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var BoardView = /*#__PURE__*/function (_React$Component) {
   _inherits(BoardView, _React$Component);
 
@@ -87354,7 +87374,10 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
       board: {},
       taskList: [],
       isLoading: false,
-      toggleEditBoard: false
+      toggleEditBoard: false,
+      user: {},
+      isLoggedIn: false,
+      id: false
     });
 
     _defineProperty(_assertThisInitialized(_this), "getBoardDetails", function () {
@@ -87390,6 +87413,8 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onCompleteBoardEdit", function (task) {
+      console.log('hello');
+
       _this.getBoardDetails();
 
       _this.toggleEditBoard();
@@ -87448,24 +87473,55 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       console.log(this.props.match.params.id);
       this.getBoardDetails();
+
+      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()) {
+        console.log("BoardView", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])());
+        this.setState({
+          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])(),
+          isLoggedIn: true
+        });
+      }
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
+      console.log('id', this.state.id);
+      console.log('id', this.state.user.id);
+      console.log('user_id', this.state.board.user_id);
+      var EditButton = null;
+      var DeleteButton = null;
+
+      if (this.state.user.id == this.state.board.user_id && this.state.user.id != undefined && this.state.board.user_id != undefined) {
+        console.log('아이디같음');
+        EditButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          className: "btn btn-success mr-2",
+          onClick: function onClick() {
+            return _this2.toggleEditBoard();
+          }
+        }, !this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\uC218\uC815"), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\uCDE8\uC18C"));
+        DeleteButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          variant: "danger",
+          className: "mr-2",
+          onClick: function onClick() {
+            return _this2.deleteBoard(_this2.props.match.params.id);
+          }
+        }, "\uC0AD\uC81C");
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "header-part"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, !this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, this.state.board.name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
         variant: "primary"
-      }, this.state.taskList.length)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, this.state.board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, this.state.taskList.length)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, this.state.board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_10__["default"], {
         taskList: this.state.taskList,
         isDetailsView: true,
         onCompleteTaskEdit: this.onCompleteTaskEdit
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }), this.state.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_8__["default"], {
         board_id: this.props.match.params.id,
         onCompleteTaskCreate: this.onCompleteTaskCreate
-      })), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoardEdit__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      }))), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoardEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
         board: this.state.board,
         onCompleteBoardEdit: this.onCompleteBoardEdit
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -87477,20 +87533,7 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
         role: "status"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "sr-only"
-      }, "Loading..."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "float-left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-        className: "btn btn-success mr-2",
-        onClick: function onClick() {
-          return _this2.toggleEditBoard();
-        }
-      }, !this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\uC218\uC815"), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\uCDE8\uC18C")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-        variant: "danger",
-        className: "mr-2",
-        onClick: function onClick() {
-          return _this2.deleteBoard(_this2.props.match.params.id);
-        }
-      }, "\uC0AD\uC81C")));
+      }, "Loading..."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), EditButton, DeleteButton);
     }
   }]);
 
@@ -88103,17 +88146,16 @@ var storeNewBoard = /*#__PURE__*/function () {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            data.user_id = 1;
-            _context2.next = 3;
+            _context2.next = 2;
             return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://reactlaravel.test/api/boards", data).then(function (res) {
               // console.log('res',res);
               return res.data;
             });
 
-          case 3:
+          case 2:
             return _context2.abrupt("return", _context2.sent);
 
-          case 4:
+          case 3:
           case "end":
             return _context2.stop();
         }
@@ -88131,17 +88173,16 @@ var updateBoard = /*#__PURE__*/function () {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            data.user_id = 1;
-            _context3.next = 3;
+            _context3.next = 2;
             return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("https://reactlaravel.test/api/boards/".concat(id), data).then(function (res) {
               // console.log('res',res);
               return res.data;
             });
 
-          case 3:
+          case 2:
             return _context3.abrupt("return", _context3.sent);
 
-          case 4:
+          case 3:
           case "end":
             return _context3.stop();
         }

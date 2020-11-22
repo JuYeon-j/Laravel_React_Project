@@ -4,22 +4,35 @@ import {Link} from 'react-router-dom'
 import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
 import {storeNewBoard, updateBoard, deleteBoard} from "../../../services/BoardService";
+import {checkIfAuthenticated} from "../../../services/AuthService";
 import TaskCreate from "../tasks/TaskCreate";
 import BoardEdit from "./BoardEdit";
 import TaskEdit from "../tasks/TaskEdit";
 import BoardList from "./BoardList";
 
 class BoardView extends React.Component{
+
     state ={
         board:{},
         taskList: [],
         isLoading: false,
         toggleEditBoard:false,
-
+        user:{},
+        isLoggedIn:false,
+        id:false,
     };
+
     componentDidMount() {
         console.log(this.props.match.params.id);
         this.getBoardDetails();
+        if(checkIfAuthenticated()){
+            console.log("BoardView", checkIfAuthenticated());
+            this.setState({
+                user:checkIfAuthenticated(),
+                isLoggedIn:true,
+            });
+        }
+        
     }
 
     getBoardDetails = () => {
@@ -29,12 +42,14 @@ class BoardView extends React.Component{
             .then((res)=>{
             console.log("res",res.data);
             const taskList = res.data.data;
+            
             this.setState({
                 taskList:res.data.data.tasks,
                 board:res.data.data,
                 isLoading: false,
             });
         });
+        
     }
 
 
@@ -50,9 +65,11 @@ class BoardView extends React.Component{
         this.setState({
            toggleEditBoard: !this.state.toggleEditBoard,
         });
+   
     }
 
     onCompleteBoardEdit = (task) => {
+        console.log('hello');
         this.getBoardDetails();
         this.toggleEditBoard();
 
@@ -81,9 +98,25 @@ class BoardView extends React.Component{
     }
 
     render() {
+      console.log('id',this.state.id);
+      console.log('id',this.state.user.id);
+      console.log('user_id',this.state.board.user_id);
+
+    let EditButton = null
+    let DeleteButton = null
+    if(this.state.user.id == this.state.board.user_id && this.state.user.id != undefined  &&
+        this.state.board.user_id != undefined){
+        console.log('아이디같음');
+        EditButton = <Button className="btn btn-success mr-2" onClick={()=>this.toggleEditBoard()}>{!this.state.toggleEditBoard && <span>수정</span>}{this.state.toggleEditBoard && <span>취소</span>}</Button> 
+        DeleteButton = <Button variant="danger" className="mr-2" onClick={()=>this.deleteBoard(this.props.match.params.id)}>삭제</Button>
+        
+  
+       
+    }
 
         return (
             <>
+            
                 <div className="header-part">
                     <div>
                         {!this.state.toggleEditBoard && (
@@ -95,10 +128,16 @@ class BoardView extends React.Component{
                                 <hr />
                                 <p>{this.state.board.description}</p>
                                 <hr />
+
                                 <TaskEdit taskList={this.state.taskList} isDetailsView={true} onCompleteTaskEdit={this.onCompleteTaskEdit}/>
 
-
-                                <TaskCreate board_id={this.props.match.params.id} onCompleteTaskCreate={this.onCompleteTaskCreate}/>
+                                {
+                                    this.state.isLoggedIn && (
+                                        <>
+                                            <TaskCreate board_id={this.props.match.params.id} onCompleteTaskCreate={this.onCompleteTaskCreate}/>
+                                        </>
+                                    )
+                                }
 
                             </>
                         )}
@@ -124,16 +163,28 @@ class BoardView extends React.Component{
                 }
 
                 <br />
-                <div className="float-left">
-                    <Button className="btn btn-success mr-2"
-                            onClick={()=>this.toggleEditBoard()}>
-                        {!this.state.toggleEditBoard && <span>수정</span>}
-                        {this.state.toggleEditBoard && <span>취소</span>}
-                    </Button>
-                    <Button variant="danger" className="mr-2" onClick={()=>this.deleteBoard(this.props.match.params.id)}>삭제</Button>
+                {EditButton}
+                {DeleteButton}
+                
+                {/* {
+                    this.state.id && (
+                      
+                        <div className="float-left">
+                        <Button className="btn btn-success mr-2"
+                                onClick={()=>this.toggleEditBoard()}>
+                            {!this.state.toggleEditBoard && <span>수정</span>}
+                            {this.state.toggleEditBoard && <span>취소</span>}
+                        </Button>
+                        <Button variant="danger" className="mr-2" onClick={()=>this.deleteBoard(this.props.match.params.id)}>삭제</Button>
+    
+                    </div>
 
-                </div>
-
+                    )
+                } */}
+               
+              
+               
+                
 
 
             </>

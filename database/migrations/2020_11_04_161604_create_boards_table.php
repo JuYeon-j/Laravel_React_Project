@@ -20,7 +20,7 @@ class CreateBoardsTable extends Migration
             $table->boolean('status')->default(0)->comment('0->in complete, 1->complete');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-
+            $table->string('user_name');
             $table->timestamps();
         });
     }

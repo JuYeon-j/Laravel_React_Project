@@ -58,7 +58,8 @@ class Register extends React.Component{
                     isLoading:false,
                     errors:{},
                 });
-                localStorage.setItem("loginData",JSON.stringify(response));
+                // localStorage.setItem("loginData",JSON.stringify(response));
+                window.location.href = PUBLIC_URL+`login`;
 
             }else{
                 console.log("response.errors", response.errors);
@@ -67,7 +68,7 @@ class Register extends React.Component{
                     errors:response.errors,
                     isLoading:false,
                 });
-                localStorage.setItem("loginData",null);
+                // localStorage.setItem("loginData",null);
             }
 
         }

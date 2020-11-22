@@ -25,6 +25,7 @@ class BoardEdit extends React.Component{
     }
 
     submitForm = async (e) => {
+        console.log('he2');
         e.preventDefault();
         const {history} = this.props;
 
@@ -33,6 +34,8 @@ class BoardEdit extends React.Component{
         const postBody = {
             name: this.state.name,
             description: this.state.description,
+            user_id: this.props.board.user_id,
+            user_name:this.props.board.user_name,
         };
         const response = await updateBoard(this.state.id, postBody);
         if(response.success){
@@ -43,6 +46,7 @@ class BoardEdit extends React.Component{
             });
             // history.push(`${PUBLIC_URL}boards`);
             // alert('Board Added');
+            console.log('he');
             this.props.onCompleteBoardEdit();
 
         }else{

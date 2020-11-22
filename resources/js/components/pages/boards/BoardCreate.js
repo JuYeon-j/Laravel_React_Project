@@ -4,6 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
 import {storeNewBoard} from "../../../services/BoardService";
+import {checkIfAuthenticated} from "../../../services/AuthService";
 
 class BoardCreate extends React.Component{
     state = {
@@ -11,9 +12,17 @@ class BoardCreate extends React.Component{
         name:"",
         description:"",
         errors:{},
+        user:{},
 
     };
-    componentDidMount() { }
+    componentDidMount() { 
+        if(checkIfAuthenticated()){
+            console.log("BoardCreate", checkIfAuthenticated());
+            this.setState({
+                user:checkIfAuthenticated(),
+            });
+        }
+    }
 
     changeInput = (e) =>{
         this.setState({
@@ -32,7 +41,10 @@ class BoardCreate extends React.Component{
         const postBody = {
             name: this.state.name,
             description: this.state.description,
+            user_id:this.state.user.id,
+            user_name:this.state.user.name,
         };
+      
         const response = await storeNewBoard(postBody);
         if(response.success){
             this.setState({

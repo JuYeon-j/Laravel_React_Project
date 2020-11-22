@@ -51,7 +51,8 @@ class BoardsController extends Controller
         $validator = \Validator::make($formData,[
             'name'=>'required',
             'description'=>'required',
-            'user_id'=>'required'
+            'user_id'=>'required',
+            'user_name'=>'required'
         ], [
             'name.required'=>'Please give project name',
             'description.required'=>'Please give project description',
@@ -90,7 +91,8 @@ class BoardsController extends Controller
         $validator = \Validator::make($formData,[
             'name'=>'required',
             'description'=>'required',
-            'user_id'=>'required'
+            'user_id'=>'required',
+            'user_name'=>'required'
         ], [
                 'name.required'=>'Please give project name',
                 'description.required'=>'Please give project description',

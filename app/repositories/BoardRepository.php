@@ -24,7 +24,8 @@ class BoardRepository implements  CrudInterface {
         $board = new Board();
         $board->name = $request->name;
         $board->description = $request->description;
-        $board->user_id= $request->user_id;;
+        $board->user_id= $request->user_id;
+        $board->user_name= $request->user_name;
         $board->save();
         return $board;
 
@@ -36,6 +37,7 @@ class BoardRepository implements  CrudInterface {
         $board->name = $request->name;
         $board->description = $request->description;
         $board->user_id = $request->user_id;
+        $board->user_name= $request->user_name;
         $board->save();
         return $board;
 

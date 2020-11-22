@@ -54,7 +54,9 @@ class App extends Component {
 
                                 <Route path={`${PUBLIC_URL}boards/view/:id`} exat={true} component={BoardView} />
 
-                                <Route path={`${PUBLIC_URL}boards/create`} exat={true} component={BoardCreate} />
+                                {/* <Route path={`${PUBLIC_URL}boards/create`} exat={true} component={BoardCreate} /> */}
+
+                                <AuthenticatedRoutes authed={this.state.isLoggedIn} path={`${PUBLIC_URL}boards/create`} component={BoardCreate} />
 
                                 {/* <AuthenticatedRoutes authed={this.state.isLoggedIn} path={`${PUBLIC_URL}boards`} component={BoardList} /> */}
 
