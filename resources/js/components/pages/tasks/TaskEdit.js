@@ -6,7 +6,7 @@ import {PUBLIC_URL} from "../../../constants";
 import {storeNewTask, updateTask, deleteTask} from "../../../services/TaskService";
 import BoardEdit from "../boards/BoardEdit";
 
-class TaskCreate extends React.Component{
+class TaskEdit extends React.Component{
     state = {
         isLoading: false,
         id:"",
@@ -14,9 +14,13 @@ class TaskCreate extends React.Component{
         comment:"",
         errors:{},
         toggleEdit:false,
+        user:{},
 
     };
-    componentDidMount() { }
+    componentDidMount() { 
+        
+      
+    }
 
     changeInput = (e) =>{
         this.setState({
@@ -35,6 +39,8 @@ class TaskCreate extends React.Component{
         const postBody = {
             comment: this.state.comment,
             board_id:this.state.board_id,
+            user_id:this.props.user.id,
+            user_name:this.props.user.name,
 
         };
         console.log('submit',postBody);
@@ -67,8 +73,10 @@ class TaskCreate extends React.Component{
             toggleEdit: !this.state.toggleEdit,
             id: item.id,
             board_id:item.board_id,
+       
         });
     }
+
 
     deleteTask = async (id)=>{
         const response = await deleteTask(id);
@@ -79,27 +87,55 @@ class TaskCreate extends React.Component{
         }
     }
 
+  
+    task = () =>{
+        this.props.taskList.map((task)=>(
+            this.setState({
+                user_id:task.id
+            })
+        ));
+
+    }
+
 
     render() {
-        console.log("comment",this.state.id);
+        let EditButton = null
+        let DeleteButton = null
+     
+     
         return (
             <>
-
+                
+                
                 {!this.state.toggleEdit && (
                     <>
                         {this.props.taskList.map((task,index)=>(
+                    
 
                             <Card key={index}>
+                                
                                 <Card.Body>
-                                    <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteTask(task.id)}>
-                                        삭제
-                                    </button>
-                                    <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleTaskEdit(task)}>
-                                        수정
-                                    </button>
+                                { (() => { 
+                                    if(this.props.user.id == task.user_id && this.props.user.id != undefined  && task.user_id != undefined){ 
+                               
+                                        EditButton = <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleTaskEdit(task)}>수정</button>
+                                        DeleteButton = <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteTask(task.id)}>삭제</button> 
+
+                                   
+                                    }else{ 
+                                        EditButton = null; 
+                                        DeleteButton = null;
+                                    } })() }
+
+                                    {DeleteButton}  
+                                    {EditButton}
+                                        
+                                 <Card.Title>{task.user_name}</Card.Title>
                                     
                                     {this.props.isDetailsView &&(
-                                        <Card.Text>{task.comment}</Card.Text>
+                                        
+                                        <Card.Text>{task.comment} </Card.Text>
+                                     
                                     )}
                                 </Card.Body>
                             </Card>
@@ -159,4 +195,4 @@ class TaskCreate extends React.Component{
     }
 }
 
-export default withRouter(TaskCreate);
+export default withRouter(TaskEdit);

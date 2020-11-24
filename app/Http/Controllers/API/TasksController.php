@@ -50,7 +50,9 @@ class TasksController extends Controller
 
         $validator = \Validator::make($formData,[
             'comment'=>'required',
-            'board_id'=>'required'
+            'board_id'=>'required',
+            'user_id'=>'required',
+            'user_name'=>'required'
         ], [
                 'comment.required'=>'Please give comment',
 
@@ -88,7 +90,9 @@ class TasksController extends Controller
 
         $validator = \Validator::make($formData,[
             'comment'=>'required',
-            'board_id'=>'required'
+            'board_id'=>'required',
+            'user_id'=>'required',
+            'user_name'=>'required'
         ], [
                 'comment.required'=>'Please give comment',
 

@@ -1,9 +1,7 @@
 import React from "react";
 import {Card, Button, Badge, Spinner, Form} from 'react-bootstrap'
 import {Link, withRouter} from 'react-router-dom'
-import Axios from "axios";
-import {PUBLIC_URL} from "../../../constants";
-import {storeNewBoard, updateBoard} from "../../../services/BoardService";
+import {updateBoard} from "../../../services/BoardService";
 
 class BoardEdit extends React.Component{
     state = {
@@ -68,9 +66,7 @@ class BoardEdit extends React.Component{
                     <Card.Body>
                         <Form onSubmit={this.submitForm}>
 
-                            {/*<div className="alert alert-danger">*/}
-
-                            {/*</div>*/}
+                        
 
                             <Form.Group controlId="name">
                                 <Form.Label>제목</Form.Label>

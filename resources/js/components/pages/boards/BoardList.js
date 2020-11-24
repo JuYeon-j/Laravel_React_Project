@@ -1,11 +1,8 @@
 import React from "react";
 import {Card, Button, Badge, Spinner} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
-import BoardView from "./BoardView";
 import {getBoardList} from "../../../services/BoardService";
-import {checkIfAuthenticated} from "../../../services/AuthService";
 
 class BoardList extends React.Component{
     

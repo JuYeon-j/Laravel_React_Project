@@ -10,6 +10,7 @@ class TaskCreate extends React.Component{
         isLoading: false,
         comment:"",
         errors:{},
+        user:{},
 
     };
     componentDidMount() { }
@@ -30,6 +31,8 @@ class TaskCreate extends React.Component{
         const postBody = {
             comment: this.state.comment,
             board_id:this.props.board_id,
+            user_id:this.props.user.id,
+            user_name:this.props.user.name,
 
         };
         const response = await storeNewTask(postBody);

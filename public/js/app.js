@@ -86701,11 +86701,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
-/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
+/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
+/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -86735,7 +86733,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -86794,7 +86791,7 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
                   user_name: _this.state.user.name
                 };
                 _context.next = 6;
-                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_6__["storeNewBoard"])(postBody);
+                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_5__["storeNewBoard"])(postBody);
 
               case 6:
                 response = _context.sent;
@@ -86806,7 +86803,7 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
                     isLoading: false
                   });
 
-                  history.push("".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards")); // alert('Board Added');
+                  history.push("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards")); // alert('Board Added');
                 } else {
                   _this.setState({
                     errors: response.errors,
@@ -86834,10 +86831,10 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
   _createClass(BoardCreate, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()) {
-        console.log("BoardCreate", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])());
+      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])()) {
+        console.log("BoardCreate", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])());
         this.setState({
-          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()
+          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])()
         });
       }
     }
@@ -86853,7 +86850,7 @@ var BoardCreate = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "\uAE00\uC4F0\uAE30")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "float-right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards"),
+        to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards"),
         className: "btn btn-info"
       }, "\uCDE8\uC18C")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "clearfix"
@@ -86923,10 +86920,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
+/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -86956,8 +86950,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -87015,7 +87007,7 @@ var BoardEdit = /*#__PURE__*/function (_React$Component) {
                   user_name: _this.props.board.user_name
                 };
                 _context.next = 7;
-                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_6__["updateBoard"])(_this.state.id, postBody);
+                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_4__["updateBoard"])(_this.state.id, postBody);
 
               case 7:
                 response = _context.sent;
@@ -87131,12 +87123,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _BoardView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BoardView */ "./resources/js/components/pages/boards/BoardView.js");
-/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
-/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
+/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -87166,9 +87154,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
 
 
 
@@ -87208,7 +87193,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
               });
 
               _context.next = 3;
-              return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_7__["getBoardList"])();
+              return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_5__["getBoardList"])();
 
             case 3:
               response = _context.sent;
@@ -87252,7 +87237,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
       }, this.state.boardList.length))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "float-right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards/create"),
+        to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards/create"),
         className: "btn btn-info"
       }, "\uAE00\uC4F0\uAE30")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "clearfix"
@@ -87271,7 +87256,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
             color: 'inherit',
             textDecoration: 'inherit'
           },
-          to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards/view/").concat(board.id)
+          to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards/view/").concat(board.id)
         }, board.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
           variant: "primary"
         }, board.tasks_count), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -87302,16 +87287,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
-/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
-/* harmony import */ var _tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../tasks/TaskCreate */ "./resources/js/components/pages/tasks/TaskCreate.js");
-/* harmony import */ var _BoardEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
-/* harmony import */ var _tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../tasks/TaskEdit */ "./resources/js/components/pages/tasks/TaskEdit.js");
-/* harmony import */ var _BoardList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./BoardList */ "./resources/js/components/pages/boards/BoardList.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
+/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
+/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
+/* harmony import */ var _tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tasks/TaskCreate */ "./resources/js/components/pages/tasks/TaskCreate.js");
+/* harmony import */ var _BoardEdit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
+/* harmony import */ var _tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../tasks/TaskEdit */ "./resources/js/components/pages/tasks/TaskEdit.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -87352,8 +87335,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
 var BoardView = /*#__PURE__*/function (_React$Component) {
   _inherits(BoardView, _React$Component);
 
@@ -87376,8 +87357,7 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
       isLoading: false,
       toggleEditBoard: false,
       user: {},
-      isLoggedIn: false,
-      id: false
+      isLoggedIn: false
     });
 
     _defineProperty(_assertThisInitialized(_this), "getBoardDetails", function () {
@@ -87385,7 +87365,7 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
         isLoading: true
       });
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://reactlaravel.test/api/boards/".concat(_this.props.match.params.id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://reactlaravel.test/api/boards/".concat(_this.props.match.params.id)).then(function (res) {
         console.log("res", res.data);
         var taskList = res.data.data;
 
@@ -87438,13 +87418,13 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
                 });
 
                 _context.next = 4;
-                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_6__["deleteBoard"])(id);
+                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_5__["deleteBoard"])(id);
 
               case 4:
                 response = _context.sent;
 
                 if (response.success) {
-                  history.push("".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards"));
+                  history.push("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards"));
                 } else {
                   _this.setState({
                     errors: response.errors,
@@ -87474,10 +87454,10 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
       console.log(this.props.match.params.id);
       this.getBoardDetails();
 
-      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()) {
-        console.log("BoardView", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])());
+      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])()) {
+        console.log("BoardView", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])());
         this.setState({
-          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])(),
+          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])(),
           isLoggedIn: true
         });
       }
@@ -87487,14 +87467,10 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log('id', this.state.id);
-      console.log('id', this.state.user.id);
-      console.log('user_id', this.state.board.user_id);
       var EditButton = null;
       var DeleteButton = null;
 
       if (this.state.user.id == this.state.board.user_id && this.state.user.id != undefined && this.state.board.user_id != undefined) {
-        console.log('아이디같음');
         EditButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
           className: "btn btn-success mr-2",
           onClick: function onClick() {
@@ -87514,14 +87490,16 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
         className: "header-part"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, !this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, this.state.board.name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
         variant: "primary"
-      }, this.state.taskList.length)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, this.state.board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }, this.state.taskList.length)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, this.state.board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
         taskList: this.state.taskList,
+        user: this.state.user,
         isDetailsView: true,
         onCompleteTaskEdit: this.onCompleteTaskEdit
-      }), this.state.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      }), this.state.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_7__["default"], {
         board_id: this.props.match.params.id,
+        user: this.state.user,
         onCompleteTaskCreate: this.onCompleteTaskCreate
-      }))), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoardEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }))), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoardEdit__WEBPACK_IMPORTED_MODULE_8__["default"], {
         board: this.state.board,
         onCompleteBoardEdit: this.onCompleteBoardEdit
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -87619,7 +87597,8 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       isLoading: false,
       comment: "",
-      errors: {}
+      errors: {},
+      user: {}
     });
 
     _defineProperty(_assertThisInitialized(_this), "changeInput", function (e) {
@@ -87644,7 +87623,9 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
 
                 postBody = {
                   comment: _this.state.comment,
-                  board_id: _this.props.board_id
+                  board_id: _this.props.board_id,
+                  user_id: _this.props.user.id,
+                  user_name: _this.props.user.name
                 };
                 _context.next = 6;
                 return Object(_services_TaskService__WEBPACK_IMPORTED_MODULE_6__["storeNewTask"])(postBody);
@@ -87787,15 +87768,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var TaskCreate = /*#__PURE__*/function (_React$Component) {
-  _inherits(TaskCreate, _React$Component);
+var TaskEdit = /*#__PURE__*/function (_React$Component) {
+  _inherits(TaskEdit, _React$Component);
 
-  var _super = _createSuper(TaskCreate);
+  var _super = _createSuper(TaskEdit);
 
-  function TaskCreate() {
+  function TaskEdit() {
     var _this;
 
-    _classCallCheck(this, TaskCreate);
+    _classCallCheck(this, TaskEdit);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -87809,7 +87790,8 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
       board_id: "",
       comment: "",
       errors: {},
-      toggleEdit: false
+      toggleEdit: false,
+      user: {}
     });
 
     _defineProperty(_assertThisInitialized(_this), "changeInput", function (e) {
@@ -87834,7 +87816,9 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
 
                 postBody = {
                   comment: _this.state.comment,
-                  board_id: _this.state.board_id
+                  board_id: _this.state.board_id,
+                  user_id: _this.props.user.id,
+                  user_name: _this.props.user.name
                 };
                 console.log('submit', postBody);
                 _context.next = 7;
@@ -87914,10 +87898,18 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
       };
     }());
 
+    _defineProperty(_assertThisInitialized(_this), "task", function () {
+      _this.props.taskList.map(function (task) {
+        return _this.setState({
+          user_id: task.id
+        });
+      });
+    });
+
     return _this;
   }
 
-  _createClass(TaskCreate, [{
+  _createClass(TaskEdit, [{
     key: "componentDidMount",
     value: function componentDidMount() {}
   }, {
@@ -87925,21 +87917,30 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("comment", this.state.id);
+      var EditButton = null;
+      var DeleteButton = null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, !this.state.toggleEdit && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, this.props.taskList.map(function (task, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], {
           key: index
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-          className: "btn btn-outline-danger btn-sm float-right",
-          onClick: function onClick() {
-            return _this2.deleteTask(task.id);
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, function () {
+          if (_this2.props.user.id == task.user_id && _this2.props.user.id != undefined && task.user_id != undefined) {
+            EditButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+              className: "btn btn-outline-success btn-sm float-right",
+              onClick: function onClick() {
+                return _this2.toggleTaskEdit(task);
+              }
+            }, "\uC218\uC815");
+            DeleteButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+              className: "btn btn-outline-danger btn-sm float-right",
+              onClick: function onClick() {
+                return _this2.deleteTask(task.id);
+              }
+            }, "\uC0AD\uC81C");
+          } else {
+            EditButton = null;
+            DeleteButton = null;
           }
-        }, "\uC0AD\uC81C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-          className: "btn btn-outline-success btn-sm float-right",
-          onClick: function onClick() {
-            return _this2.toggleTaskEdit(task);
-          }
-        }, "\uC218\uC815"), _this2.props.isDetailsView && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Text, null, task.comment)));
+        }(), DeleteButton, EditButton, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Title, null, task.user_name), _this2.props.isDetailsView && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Text, null, task.comment, " ")));
       })), this.state.toggleEdit && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
         onSubmit: this.submitForm
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
@@ -87974,10 +87975,10 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return TaskCreate;
+  return TaskEdit;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(TaskCreate));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(TaskEdit));
 
 /***/ }),
 
