@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('boards','App\Http\Controllers\API\BoardsController');
-Route::apiResource('tasks','App\Http\Controllers\API\TasksController');
+Route::apiResource('comments','App\Http\Controllers\API\CommentController');
 
 Route::get('auth/create-token','App\Http\Controllers\API\Auth\AuthAPIController@createToken');
 

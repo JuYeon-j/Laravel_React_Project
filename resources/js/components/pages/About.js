@@ -4,7 +4,7 @@ import {Container} from "react-bootstrap";
 function About() {
     return (
         <Container>
-            <h2>About Page</h2>
+            <h2>공지사항(필독)</h2>
         </Container>
     );
 }

@@ -1,18 +1,19 @@
 import React from "react";
 import {Card, Button, Badge, Spinner, Form} from 'react-bootstrap'
 import Axios from "axios";
+import {Link} from 'react-router-dom'
 import {PUBLIC_URL} from "../../../constants";
 import {deleteBoard} from "../../../services/BoardService";
 import {checkIfAuthenticated} from "../../../services/AuthService";
-import TaskCreate from "../tasks/TaskCreate";
+import CommentCreate from "../comments/CommentCreate";
 import BoardEdit from "./BoardEdit";
-import TaskEdit from "../tasks/TaskEdit";
+import CommentEdit from "../comments/CommentEdit";
 
 class BoardView extends React.Component{
 
     state ={
         board:{},
-        taskList: [],
+        commentList: [],
         isLoading: false,
         toggleEditBoard:false,
         user:{},
@@ -38,10 +39,10 @@ class BoardView extends React.Component{
             `https://reactlaravel.test/api/boards/${this.props.match.params.id}`)
             .then((res)=>{
             console.log("res",res.data);
-            const taskList = res.data.data;
+            const commentList = res.data.data;
             
             this.setState({
-                taskList:res.data.data.tasks,
+                commentList:res.data.data.comments,
                 board:res.data.data,
                 isLoading: false,
             });
@@ -50,11 +51,11 @@ class BoardView extends React.Component{
     }
 
 
-    onCompleteTaskCreate = (task) => {
-        let tasks = this.state.taskList;
-        tasks.unshift(task);
+    onCompleteCommentCreate = (comment) => {
+        let comments = this.state.commentList;
+        comments.unshift(comment);
         this.setState({
-            taskList: tasks,
+            commentList: comments,
         });
     }
 
@@ -65,14 +66,14 @@ class BoardView extends React.Component{
    
     }
 
-    onCompleteBoardEdit = (task) => {
+    onCompleteBoardEdit = (comment) => {
         console.log('hello');
         this.getBoardDetails();
         this.toggleEditBoard();
 
     }
 
-    onCompleteTaskEdit = (task) => {
+    onCompleteCommentEdit = (comment) => {
         this.getBoardDetails();
 
     }
@@ -109,23 +110,32 @@ class BoardView extends React.Component{
             <>
             
                 <div className="header-part">
+                    <div className="float-right">
+                        <Link to={`${PUBLIC_URL}boards`} className="btn btn-info">목록</Link>
+                    </div>
                     <div>
                         {!this.state.toggleEditBoard && (
                             <>
-
-                                <h2>{this.state.board.name}{" "}
-                                    <Badge variant="primary">{this.state.taskList.length}</Badge>
-                                </h2>
-                                <hr />
+                                
+                                <h2>{this.state.board.name}{" "}</h2>
+                                <div className="float-right">
+                                    <p>댓글 <Badge variant="primary">{this.state.commentList.length}</Badge></p>
+                                </div>
+                                
+                                <p>작성자: <b>{this.state.board.user_name}</b></p>
+                             
+                                
+                                <hr /> 
                                 <p>{this.state.board.description}</p>
                                 <hr />
+                                <h5><b>댓글</b></h5>
 
-                                <TaskEdit taskList={this.state.taskList} user={this.state.user} isDetailsView={true} onCompleteTaskEdit={this.onCompleteTaskEdit}/>
+                                <CommentEdit commentList={this.state.commentList} user={this.state.user} isDetailsView={true} onCompleteCommentEdit={this.onCompleteCommentEdit}/>
 
                                 {
                                     this.state.isLoggedIn && (
                                         <>
-                                            <TaskCreate board_id={this.props.match.params.id} user={this.state.user} onCompleteTaskCreate={this.onCompleteTaskCreate}/>
+                                            <CommentCreate board_id={this.props.match.params.id} user={this.state.user} onCompleteCommentCreate={this.onCompleteCommentCreate}/>
                                         </>
                                     )
                                 }

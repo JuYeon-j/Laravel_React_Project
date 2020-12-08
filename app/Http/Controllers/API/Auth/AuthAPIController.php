@@ -46,25 +46,6 @@ class AuthAPIController extends Controller
                 'errors'=> $validator->getMessageBag(),
             ]);
         }
-    
-
-        // $login = $request->validate(
-        //     [
-        //         'email'=>'required|string',
-        //         'password'=>'required|string',
-        //     ], [
-        //             'email.required'=>'Please give project email',
-        //             'password.required'=>'Please give project password',
-        //         ]
-        //     );
-
-        // if(!Auth::attempt($login)){
-        //     return 'false';
-        // }else{
-        //     return 'true';
-        // }
-        // return $login;
-
 
         if($this->authRepository->checkIfAuthenticated($request)){
 

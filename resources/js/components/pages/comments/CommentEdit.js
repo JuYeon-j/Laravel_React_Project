@@ -3,10 +3,10 @@ import {Card, Button, Badge, Spinner, Form} from 'react-bootstrap'
 import {Link, withRouter} from 'react-router-dom'
 import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
-import {storeNewTask, updateTask, deleteTask} from "../../../services/TaskService";
+import {storeNewComment, updateComment, deleteComment} from "../../../services/CommentService";
 import BoardEdit from "../boards/BoardEdit";
 
-class TaskEdit extends React.Component{
+class CommentEdit extends React.Component{
     state = {
         isLoading: false,
         id:"",
@@ -44,7 +44,7 @@ class TaskEdit extends React.Component{
 
         };
         console.log('submit',postBody);
-        const response = await updateTask(this.state.id, postBody);
+        const response = await updateComment(this.state.id, postBody);
 
         if(response.success){
 
@@ -54,7 +54,7 @@ class TaskEdit extends React.Component{
                 toggleEdit:false,
             });
 
-            this.props.onCompleteTaskEdit();
+            this.props.onCompleteCommentEdit();
 
         }else{
             this.setState({
@@ -66,7 +66,7 @@ class TaskEdit extends React.Component{
     };
 
 
-    toggleTaskEdit = (item) =>{
+    toggleCommentEdit = (item) =>{
         console.log("item",item);
         this.setState({
             comment: item.comment,
@@ -78,20 +78,20 @@ class TaskEdit extends React.Component{
     }
 
 
-    deleteTask = async (id)=>{
-        const response = await deleteTask(id);
+    deleteComment = async (id)=>{
+        const response = await deleteComment(id);
         if(response.success){
-            this.props.onCompleteTaskEdit();
+            this.props.onCompleteCommentEdit();
         }else{
             alert("Sorry!");
         }
     }
 
   
-    task = () =>{
-        this.props.taskList.map((task)=>(
+    comment = () =>{
+        this.props.commentList.map((comment)=>(
             this.setState({
-                user_id:task.id
+                user_id:comment.id
             })
         ));
 
@@ -109,36 +109,56 @@ class TaskEdit extends React.Component{
                 
                 {!this.state.toggleEdit && (
                     <>
-                        {this.props.taskList.map((task,index)=>(
-                    
-
-                            <Card key={index}>
-                                
-                                <Card.Body>
+                        {this.props.commentList.map((comment,index)=>(
+                            <div>
                                 { (() => { 
-                                    if(this.props.user.id == task.user_id && this.props.user.id != undefined  && task.user_id != undefined){ 
-                               
-                                        EditButton = <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleTaskEdit(task)}>수정</button>
-                                        DeleteButton = <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteTask(task.id)}>삭제</button> 
+                                    if(this.props.user.id == comment.user_id && this.props.user.id != undefined  && comment.user_id != undefined){ 
+                                
+                                        EditButton = <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleCommentEdit(comment)}>수정</button>
+                                        DeleteButton = <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteComment(comment.id)}>삭제</button> 
 
-                                   
+                                    
                                     }else{ 
                                         EditButton = null; 
                                         DeleteButton = null;
                                     } })() }
 
-                                    {DeleteButton}  
-                                    {EditButton}
+                                {DeleteButton}  
+                                {EditButton}
+
+                                <b>{comment.user_name}</b>
+                                <p>{comment.comment} </p>
+                                <hr />
                                         
-                                 <Card.Title>{task.user_name}</Card.Title>
+                            </div>
+
+                            // <Card key={index}>
+                                
+                            //     <Card.Body>
+                            //     { (() => { 
+                            //         if(this.props.user.id == comment.user_id && this.props.user.id != undefined  && comment.user_id != undefined){ 
+                               
+                            //             EditButton = <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleCommentEdit(comment)}>수정</button>
+                            //             DeleteButton = <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteComment(comment.id)}>삭제</button> 
+
+                                   
+                            //         }else{ 
+                            //             EditButton = null; 
+                            //             DeleteButton = null;
+                            //         } })() }
+
+                            //         {DeleteButton}  
+                            //         {EditButton}
+                                        
+                            //      <Card.Title>{comment.user_name}</Card.Title>
                                     
-                                    {this.props.isDetailsView &&(
+                            //         {this.props.isDetailsView &&(
                                         
-                                        <Card.Text>{task.comment} </Card.Text>
+                            //             <Card.Text>{comment.comment} </Card.Text>
                                      
-                                    )}
-                                </Card.Body>
-                            </Card>
+                            //         )}
+                            //     </Card.Body>
+                            // </Card>
 
                         ))}
                     </>
@@ -195,4 +215,4 @@ class TaskEdit extends React.Component{
     }
 }
 
-export default withRouter(TaskEdit);
+export default withRouter(CommentEdit);

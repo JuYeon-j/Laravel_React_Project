@@ -85996,7 +85996,7 @@ __webpack_require__.r(__webpack_exports__);
 var Footer = function Footer() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
     className: "mt-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "\xA9 2020 - All rights reserved"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "copyrigh\xA9 2020 All rights reserved by JY"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -86043,22 +86043,18 @@ var Header = function Header(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
     className: "mr-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["PUBLIC_URL"])
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"].Item, {
-    className: "text-white mr-2"
-  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["PUBLIC_URL"], "boards")
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"].Item, {
-    className: "text-white mr-2"
-  }, "\uAC8C\uC2DC\uD310")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["PUBLIC_URL"], "about")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"].Item, {
     className: "text-white mr-2"
-  }, "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "\uACF5\uC9C0\uC0AC\uD56D")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["PUBLIC_URL"], "boards")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"].Item, {
+    className: "text-white mr-2"
+  }, "\uC790\uC720\uAC8C\uC2DC\uD310")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["PUBLIC_URL"], "contact")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"].Item, {
     className: "text-white mr-2"
-  }, "Contact")), !props.authData.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "\uAC00\uC774\uB4DC")), !props.authData.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["PUBLIC_URL"], "login")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"].Item, {
     className: "text-white mr-2"
@@ -86097,7 +86093,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function About() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "About Page"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\uACF5\uC9C0\uC0AC\uD56D(\uD544\uB3C5)"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
@@ -86120,7 +86116,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Contact() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Contact Page"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\uAC00\uC774\uB4DC"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Contact);
@@ -86145,7 +86141,7 @@ __webpack_require__.r(__webpack_exports__);
 function Home() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome to Home Page")));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\uC548\uB155\uD558\uC138\uC694! \uBC18\uAC11\uC2B5\uB2C8\uB2E4")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -87259,7 +87255,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
           to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards/view/").concat(board.id)
         }, board.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
           variant: "primary"
-        }, board.tasks_count), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        }, board.comments_count), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "float-right"
         }, board.user_name)));
       }));
@@ -87289,12 +87285,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
-/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
-/* harmony import */ var _tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tasks/TaskCreate */ "./resources/js/components/pages/tasks/TaskCreate.js");
-/* harmony import */ var _BoardEdit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
-/* harmony import */ var _tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../tasks/TaskEdit */ "./resources/js/components/pages/tasks/TaskEdit.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
+/* harmony import */ var _services_BoardService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/BoardService */ "./resources/js/services/BoardService.js");
+/* harmony import */ var _services_AuthService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/AuthService */ "./resources/js/services/AuthService.js");
+/* harmony import */ var _comments_CommentCreate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../comments/CommentCreate */ "./resources/js/components/pages/comments/CommentCreate.js");
+/* harmony import */ var _BoardEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
+/* harmony import */ var _comments_CommentEdit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../comments/CommentEdit */ "./resources/js/components/pages/comments/CommentEdit.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -87335,6 +87332,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var BoardView = /*#__PURE__*/function (_React$Component) {
   _inherits(BoardView, _React$Component);
 
@@ -87353,7 +87351,7 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       board: {},
-      taskList: [],
+      commentList: [],
       isLoading: false,
       toggleEditBoard: false,
       user: {},
@@ -87367,22 +87365,22 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
 
       axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://reactlaravel.test/api/boards/".concat(_this.props.match.params.id)).then(function (res) {
         console.log("res", res.data);
-        var taskList = res.data.data;
+        var commentList = res.data.data;
 
         _this.setState({
-          taskList: res.data.data.tasks,
+          commentList: res.data.data.comments,
           board: res.data.data,
           isLoading: false
         });
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompleteTaskCreate", function (task) {
-      var tasks = _this.state.taskList;
-      tasks.unshift(task);
+    _defineProperty(_assertThisInitialized(_this), "onCompleteCommentCreate", function (comment) {
+      var comments = _this.state.commentList;
+      comments.unshift(comment);
 
       _this.setState({
-        taskList: tasks
+        commentList: comments
       });
     });
 
@@ -87392,7 +87390,7 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompleteBoardEdit", function (task) {
+    _defineProperty(_assertThisInitialized(_this), "onCompleteBoardEdit", function (comment) {
       console.log('hello');
 
       _this.getBoardDetails();
@@ -87400,7 +87398,7 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
       _this.toggleEditBoard();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompleteTaskEdit", function (task) {
+    _defineProperty(_assertThisInitialized(_this), "onCompleteCommentEdit", function (comment) {
       _this.getBoardDetails();
     });
 
@@ -87418,13 +87416,13 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
                 });
 
                 _context.next = 4;
-                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_5__["deleteBoard"])(id);
+                return Object(_services_BoardService__WEBPACK_IMPORTED_MODULE_6__["deleteBoard"])(id);
 
               case 4:
                 response = _context.sent;
 
                 if (response.success) {
-                  history.push("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["PUBLIC_URL"], "boards"));
+                  history.push("".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards"));
                 } else {
                   _this.setState({
                     errors: response.errors,
@@ -87454,10 +87452,10 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
       console.log(this.props.match.params.id);
       this.getBoardDetails();
 
-      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])()) {
-        console.log("BoardView", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])());
+      if (Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])()) {
+        console.log("BoardView", Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])());
         this.setState({
-          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_6__["checkIfAuthenticated"])(),
+          user: Object(_services_AuthService__WEBPACK_IMPORTED_MODULE_7__["checkIfAuthenticated"])(),
           isLoggedIn: true
         });
       }
@@ -87488,18 +87486,25 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "header-part"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, !this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, this.state.board.name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "float-right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+        to: "".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["PUBLIC_URL"], "boards"),
+        className: "btn btn-info"
+      }, "\uBAA9\uB85D")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, !this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, this.state.board.name, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "float-right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\uB313\uAE00 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
         variant: "primary"
-      }, this.state.taskList.length)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, this.state.board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        taskList: this.state.taskList,
+      }, this.state.commentList.length))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\uC791\uC131\uC790: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", null, this.state.board.user_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, this.state.board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h5", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", null, "\uB313\uAE00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_comments_CommentEdit__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        commentList: this.state.commentList,
         user: this.state.user,
         isDetailsView: true,
-        onCompleteTaskEdit: this.onCompleteTaskEdit
-      }), this.state.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tasks_TaskCreate__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        onCompleteCommentEdit: this.onCompleteCommentEdit
+      }), this.state.isLoggedIn && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_comments_CommentCreate__WEBPACK_IMPORTED_MODULE_8__["default"], {
         board_id: this.props.match.params.id,
         user: this.state.user,
-        onCompleteTaskCreate: this.onCompleteTaskCreate
-      }))), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoardEdit__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        onCompleteCommentCreate: this.onCompleteCommentCreate
+      }))), this.state.toggleEditBoard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoardEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
         board: this.state.board,
         onCompleteBoardEdit: this.onCompleteBoardEdit
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -87522,10 +87527,10 @@ var BoardView = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/tasks/TaskCreate.js":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/pages/tasks/TaskCreate.js ***!
-  \***********************************************************/
+/***/ "./resources/js/components/pages/comments/CommentCreate.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/pages/comments/CommentCreate.js ***!
+  \*****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -87540,7 +87545,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _services_TaskService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/TaskService */ "./resources/js/services/TaskService.js");
+/* harmony import */ var _services_CommentService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/CommentService */ "./resources/js/services/CommentService.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -87578,15 +87583,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var TaskCreate = /*#__PURE__*/function (_React$Component) {
-  _inherits(TaskCreate, _React$Component);
+var CommentCreate = /*#__PURE__*/function (_React$Component) {
+  _inherits(CommentCreate, _React$Component);
 
-  var _super = _createSuper(TaskCreate);
+  var _super = _createSuper(CommentCreate);
 
-  function TaskCreate() {
+  function CommentCreate() {
     var _this;
 
-    _classCallCheck(this, TaskCreate);
+    _classCallCheck(this, CommentCreate);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -87628,7 +87633,7 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
                   user_name: _this.props.user.name
                 };
                 _context.next = 6;
-                return Object(_services_TaskService__WEBPACK_IMPORTED_MODULE_6__["storeNewTask"])(postBody);
+                return Object(_services_CommentService__WEBPACK_IMPORTED_MODULE_6__["storeNewComment"])(postBody);
 
               case 6:
                 response = _context.sent;
@@ -87639,7 +87644,7 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
                     isLoading: false
                   });
 
-                  _this.props.onCompleteTaskCreate(response.data);
+                  _this.props.onCompleteCommentCreate(response.data);
                 } else {
                   _this.setState({
                     errors: response.errors,
@@ -87663,7 +87668,7 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(TaskCreate, [{
+  _createClass(CommentCreate, [{
     key: "componentDidMount",
     value: function componentDidMount() {}
   }, {
@@ -87703,17 +87708,17 @@ var TaskCreate = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return TaskCreate;
+  return CommentCreate;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(TaskCreate));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(CommentCreate));
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/tasks/TaskEdit.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/pages/tasks/TaskEdit.js ***!
-  \*********************************************************/
+/***/ "./resources/js/components/pages/comments/CommentEdit.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/pages/comments/CommentEdit.js ***!
+  \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -87728,7 +87733,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
-/* harmony import */ var _services_TaskService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/TaskService */ "./resources/js/services/TaskService.js");
+/* harmony import */ var _services_CommentService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/CommentService */ "./resources/js/services/CommentService.js");
 /* harmony import */ var _boards_BoardEdit__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../boards/BoardEdit */ "./resources/js/components/pages/boards/BoardEdit.js");
 
 
@@ -87768,15 +87773,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var TaskEdit = /*#__PURE__*/function (_React$Component) {
-  _inherits(TaskEdit, _React$Component);
+var CommentEdit = /*#__PURE__*/function (_React$Component) {
+  _inherits(CommentEdit, _React$Component);
 
-  var _super = _createSuper(TaskEdit);
+  var _super = _createSuper(CommentEdit);
 
-  function TaskEdit() {
+  function CommentEdit() {
     var _this;
 
-    _classCallCheck(this, TaskEdit);
+    _classCallCheck(this, CommentEdit);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -87822,7 +87827,7 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
                 };
                 console.log('submit', postBody);
                 _context.next = 7;
-                return Object(_services_TaskService__WEBPACK_IMPORTED_MODULE_6__["updateTask"])(_this.state.id, postBody);
+                return Object(_services_CommentService__WEBPACK_IMPORTED_MODULE_6__["updateComment"])(_this.state.id, postBody);
 
               case 7:
                 response = _context.sent;
@@ -87834,7 +87839,7 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
                     toggleEdit: false
                   });
 
-                  _this.props.onCompleteTaskEdit();
+                  _this.props.onCompleteCommentEdit();
                 } else {
                   _this.setState({
                     errors: response.errors,
@@ -87855,7 +87860,7 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
       };
     }());
 
-    _defineProperty(_assertThisInitialized(_this), "toggleTaskEdit", function (item) {
+    _defineProperty(_assertThisInitialized(_this), "toggleCommentEdit", function (item) {
       console.log("item", item);
 
       _this.setState({
@@ -87866,7 +87871,7 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "deleteTask", /*#__PURE__*/function () {
+    _defineProperty(_assertThisInitialized(_this), "deleteComment", /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(id) {
         var response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
@@ -87874,13 +87879,13 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return Object(_services_TaskService__WEBPACK_IMPORTED_MODULE_6__["deleteTask"])(id);
+                return Object(_services_CommentService__WEBPACK_IMPORTED_MODULE_6__["deleteComment"])(id);
 
               case 2:
                 response = _context2.sent;
 
                 if (response.success) {
-                  _this.props.onCompleteTaskEdit();
+                  _this.props.onCompleteCommentEdit();
                 } else {
                   alert("Sorry!");
                 }
@@ -87898,10 +87903,10 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
       };
     }());
 
-    _defineProperty(_assertThisInitialized(_this), "task", function () {
-      _this.props.taskList.map(function (task) {
+    _defineProperty(_assertThisInitialized(_this), "comment", function () {
+      _this.props.commentList.map(function (comment) {
         return _this.setState({
-          user_id: task.id
+          user_id: comment.id
         });
       });
     });
@@ -87909,7 +87914,7 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(TaskEdit, [{
+  _createClass(CommentEdit, [{
     key: "componentDidMount",
     value: function componentDidMount() {}
   }, {
@@ -87919,28 +87924,44 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
 
       var EditButton = null;
       var DeleteButton = null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, !this.state.toggleEdit && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, this.props.taskList.map(function (task, index) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], {
-          key: index
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, function () {
-          if (_this2.props.user.id == task.user_id && _this2.props.user.id != undefined && task.user_id != undefined) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, !this.state.toggleEdit && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, this.props.commentList.map(function (comment, index) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, function () {
+          if (_this2.props.user.id == comment.user_id && _this2.props.user.id != undefined && comment.user_id != undefined) {
             EditButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
               className: "btn btn-outline-success btn-sm float-right",
               onClick: function onClick() {
-                return _this2.toggleTaskEdit(task);
+                return _this2.toggleCommentEdit(comment);
               }
             }, "\uC218\uC815");
             DeleteButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
               className: "btn btn-outline-danger btn-sm float-right",
               onClick: function onClick() {
-                return _this2.deleteTask(task.id);
+                return _this2.deleteComment(comment.id);
               }
             }, "\uC0AD\uC81C");
           } else {
             EditButton = null;
             DeleteButton = null;
           }
-        }(), DeleteButton, EditButton, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Title, null, task.user_name), _this2.props.isDetailsView && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Text, null, task.comment, " ")));
+        }(), DeleteButton, EditButton, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", null, comment.user_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, comment.comment, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null)) // <Card key={index}>
+        //     <Card.Body>
+        //     { (() => { 
+        //         if(this.props.user.id == comment.user_id && this.props.user.id != undefined  && comment.user_id != undefined){ 
+        //             EditButton = <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleCommentEdit(comment)}>수정</button>
+        //             DeleteButton = <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteComment(comment.id)}>삭제</button> 
+        //         }else{ 
+        //             EditButton = null; 
+        //             DeleteButton = null;
+        //         } })() }
+        //         {DeleteButton}  
+        //         {EditButton}
+        //      <Card.Title>{comment.user_name}</Card.Title>
+        //         {this.props.isDetailsView &&(
+        //             <Card.Text>{comment.comment} </Card.Text>
+        //         )}
+        //     </Card.Body>
+        // </Card>
+        ;
       })), this.state.toggleEdit && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
         onSubmit: this.submitForm
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
@@ -87975,10 +87996,10 @@ var TaskEdit = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return TaskEdit;
+  return CommentEdit;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(TaskEdit));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(CommentEdit));
 
 /***/ }),
 
@@ -88225,19 +88246,19 @@ var deleteBoard = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/services/TaskService.js":
-/*!**********************************************!*\
-  !*** ./resources/js/services/TaskService.js ***!
-  \**********************************************/
-/*! exports provided: getTaskList, storeNewTask, updateTask, deleteTask */
+/***/ "./resources/js/services/CommentService.js":
+/*!*************************************************!*\
+  !*** ./resources/js/services/CommentService.js ***!
+  \*************************************************/
+/*! exports provided: getCommentList, storeNewComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskList", function() { return getTaskList; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeNewTask", function() { return storeNewTask; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateTask", function() { return updateTask; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteTask", function() { return deleteTask; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCommentList", function() { return getCommentList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeNewComment", function() { return storeNewComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -88249,8 +88270,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-var getTaskList = function getTaskList() {};
-var storeNewTask = /*#__PURE__*/function () {
+var getCommentList = function getCommentList() {};
+var storeNewComment = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(data) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
@@ -88258,7 +88279,7 @@ var storeNewTask = /*#__PURE__*/function () {
           case 0:
             data.board_id = parseInt(data.board_id);
             _context.next = 3;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://reactlaravel.test/api/tasks", data).then(function (res) {
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://reactlaravel.test/api/comments", data).then(function (res) {
               // console.log('res',res);
               return res.data;
             });
@@ -88274,18 +88295,18 @@ var storeNewTask = /*#__PURE__*/function () {
     }, _callee);
   }));
 
-  return function storeNewTask(_x) {
+  return function storeNewComment(_x) {
     return _ref.apply(this, arguments);
   };
 }();
-var updateTask = /*#__PURE__*/function () {
+var updateComment = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(id, data) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("https://reactlaravel.test/api/tasks/".concat(id), data).then(function (res) {
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("https://reactlaravel.test/api/comments/".concat(id), data).then(function (res) {
               console.log('res', res);
               return res.data;
             });
@@ -88301,18 +88322,18 @@ var updateTask = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function updateTask(_x2, _x3) {
+  return function updateComment(_x2, _x3) {
     return _ref2.apply(this, arguments);
   };
 }();
-var deleteTask = /*#__PURE__*/function () {
+var deleteComment = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(id) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("https://reactlaravel.test/api/tasks/".concat(id)).then(function (res) {
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("https://reactlaravel.test/api/comments/".concat(id)).then(function (res) {
               console.log('res', res);
               return res.data;
             });
@@ -88328,7 +88349,7 @@ var deleteTask = /*#__PURE__*/function () {
     }, _callee3);
   }));
 
-  return function deleteTask(_x4) {
+  return function deleteComment(_x4) {
     return _ref3.apply(this, arguments);
   };
 }();

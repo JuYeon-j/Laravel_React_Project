@@ -9,13 +9,13 @@ class BoardRepository implements  CrudInterface {
 
     public function getAll()
     {
-       $boards = Board::withCount('tasks')->orderBy('id','desc')->get();
+       $boards = Board::withCount('comments')->orderBy('id','desc')->get();
        return $boards;
     }
 
     public function findById($id)
     {
-        $board = Board::with('tasks')->find($id);
+        $board = Board::with('comments')->find($id);
         return $board;
     }
 
@@ -46,7 +46,7 @@ class BoardRepository implements  CrudInterface {
     public function delete($id)
     {
         $board = $this->findById($id);
-        $board->tasks()->delete();
+        $board->comments()->delete();
         $board->delete();
         return $board;
     }

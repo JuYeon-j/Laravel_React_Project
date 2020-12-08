@@ -3,48 +3,48 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Task;
-use App\repositories\TaskRepository;
+use App\Models\Comment;
+use App\repositories\CommentRepository;
 use Illuminate\Http\Request;
 
-class TasksController extends Controller
+class CommentController extends Controller
 {
-    public $TaskRepository;
+    public $CommentRepository;
 
-    public function __construct(TaskRepository $TaskRepository){
-        $this->TaskRepository = $TaskRepository;
+    public function __construct(CommentRepository $CommentRepository){
+        $this->CommentRepository = $CommentRepository;
     }
 
-    // index() Get all Task List
+    // index() Get all Comment List
     public function index(){
-        $Tasks = $this->TaskRepository->getAll();
+        $Comments = $this->CommentRepository->getAll();
         return response()->json([
             'success'=> true,
-            'message'=> 'Task List',
-            'data'=>$Tasks
+            'message'=> 'Comment List',
+            'data'=>$Comments
         ]);
     }
 
-    // show() Find Task by ID
+    // show() Find Comment by ID
     public function show($id){
-        $Task = $this->TaskRepository->findById($id);
+        $Comment = $this->CommentRepository->findById($id);
 
-        if(is_null($Task)){
+        if(is_null($Comment)){
             return response()->json([
                 'success'=> false,
-                'message'=> 'Task Details',
+                'message'=> 'Comment Details',
                 'data'=>null
             ]);
 
         }
         return response()->json([
             'success'=> true,
-            'message'=> 'Task Details',
-            'data'=> $Task
+            'message'=> 'Comment Details',
+            'data'=> $Comment
         ]);
     }
 
-    // store() Create New Task
+    // store() Create New Comment
     public function store(Request $request){
         $formData = $request->all();
 
@@ -67,22 +67,22 @@ class TasksController extends Controller
             ]);
         }
 
-        $Task = $this->TaskRepository->create($request);
+        $Comment = $this->CommentRepository->create($request);
         return response()->json([
             'success'=> true,
-            'message'=> 'Task Stored',
-            'data'=>$Task
+            'message'=> 'Comment Stored',
+            'data'=>$Comment
         ]);
     }
 
-    // update() Update Task by ID
+    // update() Update Comment by ID
     public function update(Request $request, $id){
 
-        $Task = $this->TaskRepository->findById($id);
-        if(is_null($Task)){
+        $Comment = $this->CommentRepository->findById($id);
+        if(is_null($Comment)){
             return response()->json([
                 'success'=> false,
-                'message'=> 'Task Not found',
+                'message'=> 'Comment Not found',
                 'data'=> null,
             ]);
         }
@@ -107,31 +107,31 @@ class TasksController extends Controller
             ]);
         }
 
-        $Task = $this->TaskRepository->edit($request, $id);
+        $Comment = $this->CommentRepository->edit($request, $id);
         return response()->json([
             'success'=> true,
-            'message'=> 'Task Updated',
-            'data'=>$Task
+            'message'=> 'Comment Updated',
+            'data'=>$Comment
         ]);
     }
 
-    // destroy() Delete a Task
+    // destroy() Delete a Comment
     public function destroy($id){
 
-        $Task = $this->TaskRepository->findById($id);
-        if(is_null($Task)){
+        $Comment = $this->CommentRepository->findById($id);
+        if(is_null($Comment)){
             return response()->json([
                 'success'=> false,
-                'message'=> 'Task Not found',
+                'message'=> 'Comment Not found',
                 'data'=> null,
             ]);
         }
 
-        $Task = $this->TaskRepository->delete($id);
+        $Comment = $this->CommentRepository->delete($id);
         return response()->json([
             'success'=> true,
-            'message'=> 'Task Updated',
-            'data'=>$Task
+            'message'=> 'Comment Updated',
+            'data'=>$Comment
         ]);
     }
 }

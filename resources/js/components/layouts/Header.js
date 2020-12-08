@@ -22,19 +22,16 @@ const Header = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link to={`${PUBLIC_URL}`}>
-                            <Nav.Item className="text-white mr-2">Home</Nav.Item>
+                        <Link to={`${PUBLIC_URL}about`}>
+                            <Nav.Item className="text-white mr-2">공지사항</Nav.Item>
                         </Link>
                       
                         <Link to={`${PUBLIC_URL}boards`}>
-                            <Nav.Item className="text-white mr-2">게시판</Nav.Item>
+                            <Nav.Item className="text-white mr-2">자유게시판</Nav.Item>
                         </Link>
                     
-                        <Link to={`${PUBLIC_URL}about`}>
-                            <Nav.Item className="text-white mr-2">About</Nav.Item>
-                        </Link>
                         <Link to={`${PUBLIC_URL}contact`}>
-                            <Nav.Item className="text-white mr-2">Contact</Nav.Item>
+                            <Nav.Item className="text-white mr-2">가이드</Nav.Item>
                         </Link>
                       
                         {

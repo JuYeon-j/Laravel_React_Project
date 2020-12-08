@@ -75,7 +75,7 @@ class BoardList extends React.Component{
                             <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={`${PUBLIC_URL}boards/view/${board.id}`} >
                                 {board.name}</Link>
                             {" "}
-                            <Badge variant="primary">{board.tasks_count}</Badge>
+                            <Badge variant="primary">{board.comments_count}</Badge>
                             <div className="float-right">{board.user_name}</div>
                        
                         </Card.Body>

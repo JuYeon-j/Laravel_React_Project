@@ -5,7 +5,7 @@ function Home() {
     return (
         <Container>
             <div className="card card-body">
-                <h2>Welcome to Home Page</h2>
+                <h2>안녕하세요! 반갑습니다</h2>
                
 
             </div>

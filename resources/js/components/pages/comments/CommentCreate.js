@@ -3,9 +3,9 @@ import {Card, Button, Badge, Spinner, Form} from 'react-bootstrap'
 import {Link, withRouter} from 'react-router-dom'
 import Axios from "axios";
 import {PUBLIC_URL} from "../../../constants";
-import {storeNewTask} from "../../../services/TaskService";
+import {storeNewComment} from "../../../services/CommentService";
 
-class TaskCreate extends React.Component{
+class CommentCreate extends React.Component{
     state = {
         isLoading: false,
         comment:"",
@@ -35,13 +35,13 @@ class TaskCreate extends React.Component{
             user_name:this.props.user.name,
 
         };
-        const response = await storeNewTask(postBody);
+        const response = await storeNewComment(postBody);
         if(response.success){
             this.setState({
                 comment:"",
                 isLoading:false,
             });
-            this.props.onCompleteTaskCreate(response.data);
+            this.props.onCompleteCommentCreate(response.data);
 
         }else{
             this.setState({
@@ -95,4 +95,4 @@ class TaskCreate extends React.Component{
     }
 }
 
-export default withRouter(TaskCreate);
+export default withRouter(CommentCreate);
