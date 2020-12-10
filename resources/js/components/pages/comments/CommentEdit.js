@@ -55,6 +55,7 @@ class CommentEdit extends React.Component{
             });
 
             this.props.onCompleteCommentEdit();
+            this.props.onEdit();
 
         }else{
             this.setState({
@@ -75,6 +76,7 @@ class CommentEdit extends React.Component{
             board_id:item.board_id,
        
         });
+        this.props.onEdit();
     }
 
 
@@ -110,7 +112,7 @@ class CommentEdit extends React.Component{
                 {!this.state.toggleEdit && (
                     <>
                         {this.props.commentList.map((comment,index)=>(
-                            <div>
+                            <div key={index}>
                                 { (() => { 
                                     if(this.props.user.id == comment.user_id && this.props.user.id != undefined  && comment.user_id != undefined){ 
                                 
@@ -131,35 +133,6 @@ class CommentEdit extends React.Component{
                                 <hr />
                                         
                             </div>
-
-                            // <Card key={index}>
-                                
-                            //     <Card.Body>
-                            //     { (() => { 
-                            //         if(this.props.user.id == comment.user_id && this.props.user.id != undefined  && comment.user_id != undefined){ 
-                               
-                            //             EditButton = <button className="btn btn-outline-success btn-sm float-right" onClick={()=>this.toggleCommentEdit(comment)}>수정</button>
-                            //             DeleteButton = <button className="btn btn-outline-danger btn-sm float-right" onClick={()=>this.deleteComment(comment.id)}>삭제</button> 
-
-                                   
-                            //         }else{ 
-                            //             EditButton = null; 
-                            //             DeleteButton = null;
-                            //         } })() }
-
-                            //         {DeleteButton}  
-                            //         {EditButton}
-                                        
-                            //      <Card.Title>{comment.user_name}</Card.Title>
-                                    
-                            //         {this.props.isDetailsView &&(
-                                        
-                            //             <Card.Text>{comment.comment} </Card.Text>
-                                     
-                            //         )}
-                            //     </Card.Body>
-                            // </Card>
-
                         ))}
                     </>
                 )}

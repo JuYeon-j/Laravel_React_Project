@@ -39,7 +39,7 @@ class BoardCreate extends React.Component{
 
         const postBody = {
             name: this.state.name,
-            description: this.state.description,
+            description: this.state.description.replace(/\n/g, '<br/>'),
             user_id:this.state.user.id,
             user_name:this.state.user.name,
         };

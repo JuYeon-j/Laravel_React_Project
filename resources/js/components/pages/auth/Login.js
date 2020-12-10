@@ -130,7 +130,7 @@ class Login extends React.Component{
 
                             <Form.Group controlId="password">
                                 <Form.Label>비밀번호</Form.Label>
-                                <Form.Control type="text"
+                                <Form.Control type="password"
                                             placeholder="비밀번호를 입력하세요"
                                             required
                                             name="password"

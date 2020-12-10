@@ -3,6 +3,7 @@ import {Card, Button, Badge, Spinner} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {PUBLIC_URL} from "../../../constants";
 import {getBoardList} from "../../../services/BoardService";
+import Pagination from 'react-bootstrap/Pagination'
 
 class BoardList extends React.Component{
     
@@ -16,6 +17,7 @@ class BoardList extends React.Component{
 
     componentDidMount() {
         this.getBoardLists();
+     
        
         // console.log('this.props', this.props);
     }
@@ -34,7 +36,6 @@ class BoardList extends React.Component{
             });
         }
     }
-  
 
 
     render() {
@@ -44,12 +45,22 @@ class BoardList extends React.Component{
 
                 <div className="header-part">
                     <div className="float-left">
-                        <h2>게시판{" "}
-                            <Badge variant="primary">{this.state.boardList.length}</Badge>
-                        </h2>
+                        <h3>자유게시판
+                            {/* <Badge variant="primary">{this.state.boardList.length}</Badge> */}
+                        </h3>
                     </div>
                     <div className="float-right">
                         <Link to={`${PUBLIC_URL}boards/create`} className="btn btn-info">글쓰기</Link>
+                    </div>
+                    <div className="clearfix">
+
+                    </div>
+                    <hr />
+                    <div className="float-left">
+                        <h5>&emsp; 제목</h5>
+                    </div>
+                    <div className="float-right">
+                        <h5>작성자&emsp;</h5>
                     </div>
                     <div className="clearfix">
 
@@ -81,6 +92,10 @@ class BoardList extends React.Component{
                         </Card.Body>
                     </Card>
                 ))}
+             
+               
+                
+              
 
             </>
         );

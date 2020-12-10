@@ -18,6 +18,8 @@ class BoardView extends React.Component{
         toggleEditBoard:false,
         user:{},
         isLoggedIn:false,
+        toggleCreate:false,
+
     };
 
     componentDidMount() {
@@ -43,7 +45,7 @@ class BoardView extends React.Component{
             
             this.setState({
                 commentList:res.data.data.comments,
-                board:res.data.data,
+                board: res.data.data,
                 isLoading: false,
             });
         });
@@ -76,6 +78,12 @@ class BoardView extends React.Component{
     onCompleteCommentEdit = (comment) => {
         this.getBoardDetails();
 
+    }
+
+    onEdit = () => {
+        this.setState({
+            toggleCreate: !this.state.toggleCreate,
+        })
     }
 
     deleteBoard = async (id)=>{
@@ -126,16 +134,27 @@ class BoardView extends React.Component{
                              
                                 
                                 <hr /> 
-                                <p>{this.state.board.description}</p>
+
+                                <div dangerouslySetInnerHTML={ {__html: this.state.board.description} }>
+                                 </div>
+                            
+
                                 <hr />
                                 <h5><b>댓글</b></h5>
 
-                                <CommentEdit commentList={this.state.commentList} user={this.state.user} isDetailsView={true} onCompleteCommentEdit={this.onCompleteCommentEdit}/>
+                                <CommentEdit commentList={this.state.commentList} user={this.state.user} isDetailsView={true} onCompleteCommentEdit={this.onCompleteCommentEdit} onEdit={this.onEdit}/>
 
                                 {
                                     this.state.isLoggedIn && (
                                         <>
-                                            <CommentCreate board_id={this.props.match.params.id} user={this.state.user} onCompleteCommentCreate={this.onCompleteCommentCreate}/>
+                                            {
+                                                !this.state.toggleCreate && (
+                                                    <>
+                                                        <CommentCreate board_id={this.props.match.params.id} user={this.state.user} onCompleteCommentCreate={this.onCompleteCommentCreate}/>
+                                                    </>
+                                                )
+                                            }
+                                            
                                         </>
                                     )
                                 }

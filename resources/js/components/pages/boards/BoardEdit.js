@@ -8,7 +8,7 @@ class BoardEdit extends React.Component{
         isLoading: false,
         id: this.props.board.id,
         name: this.props.board.name,
-        description: this.props.board.description,
+        description: this.props.board.description.replace(/<br\s*[\/]?>/gi, '\r\n'),
         errors:{},
 
     };
@@ -31,7 +31,7 @@ class BoardEdit extends React.Component{
 
         const postBody = {
             name: this.state.name,
-            description: this.state.description,
+            description: this.state.description.replace(/\n/g, '<br/>'),
             user_id: this.props.board.user_id,
             user_name:this.props.board.user_name,
         };
