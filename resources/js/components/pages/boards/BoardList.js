@@ -3,7 +3,7 @@ import {Card, Button, Badge, Spinner} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {PUBLIC_URL} from "../../../constants";
 import {getBoardList} from "../../../services/BoardService";
-import Pagination from 'react-bootstrap/Pagination'
+import Pagination from 'react-paginate'
 
 class BoardList extends React.Component{
     
@@ -11,7 +11,10 @@ class BoardList extends React.Component{
     state ={
         boardList: [],
         isLoading: false,
-     
+        perPage: 5,
+        currentPage: 0,
+        offset: 0,
+        tableData: [],
 
     };
 
@@ -25,16 +28,50 @@ class BoardList extends React.Component{
     getBoardLists = async () => {
         this.setState({isLoading:true});
         const response = await getBoardList();
+
+        const data = response.data;
+				
+        const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+        
+
         if(response.success){
             this.setState({
                 boardList:response.data,
                 isLoading:false,
+
+                pageCount: Math.ceil(data.length / this.state.perPage),
+                tableData: slice
+
+
             });
         }else{
             this.setState({
                 isLoading:false,
             });
         }
+    }
+
+    handlePageClick = (e) =>{
+        const selectedPage = e.selected;
+        const offset = selectedPage * this.state.perPage;
+
+        this.setState({
+            currentPage: selectedPage,
+            offset: offset
+        }, () => {
+            this.loadMoreData()
+        });
+    }
+
+    loadMoreData() {
+		const data = this.state.boardList;
+		
+		const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+		this.setState({
+			pageCount: Math.ceil(data.length / this.state.perPage),
+			tableData: slice
+		})
+	
     }
 
 
@@ -80,7 +117,7 @@ class BoardList extends React.Component{
                 }
 
 
-                {this.state.boardList.map((board,index)=>(
+                {this.state.tableData.map((board,index)=>(
                     <Card key={index}>
                         <Card.Body>
                             <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={`${PUBLIC_URL}boards/view/${board.id}`} >
@@ -92,10 +129,22 @@ class BoardList extends React.Component{
                         </Card.Body>
                     </Card>
                 ))}
-             
-               
-                
-              
+                <br />
+
+                <div className="d-flex justify-content-center">
+                    <Pagination
+                        previousLabel={"이전"}
+                        nextLabel={"다음"}
+                        breakLabel={"..."}
+                        breakClassName={"break-me"}
+                        pageCount={this.state.pageCount}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={5}
+                        onPageChange={this.handlePageClick.bind(this)}
+                        containerClassName={"pagination"}
+                        subContainerClassName={"pages pagination"}
+                        activeClassName={"active"}/>
+                </div>
 
             </>
         );

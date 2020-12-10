@@ -118,12 +118,13 @@ class BoardView extends React.Component{
             <>
             
                 <div className="header-part">
-                    <div className="float-right">
-                        <Link to={`${PUBLIC_URL}boards`} className="btn btn-info">목록</Link>
-                    </div>
+                   
                     <div>
                         {!this.state.toggleEditBoard && (
                             <>
+                                 <div className="float-right">
+                                    <Link to={`${PUBLIC_URL}boards`} className="btn btn-info">목록</Link>
+                                </div>
                                 
                                 <h2>{this.state.board.name}{" "}</h2>
                                 <div className="float-right">
@@ -184,7 +185,13 @@ class BoardView extends React.Component{
 
                 <br />
                 {EditButton}
-                {DeleteButton}
+
+                {!this.state.toggleEditBoard && (
+                    <>
+                     {DeleteButton}
+                     </>
+                )}
+               
 
             </>
         );
