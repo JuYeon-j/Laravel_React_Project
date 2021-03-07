@@ -82,7 +82,7 @@ class BoardList extends React.Component{
 
                 <div className="header-part">
                     <div className="float-left">
-                        <h3>자유게시판
+                        <h3>세븐틴
                             {/* <Badge variant="primary">{this.state.boardList.length}</Badge> */}
                         </h3>
                     </div>

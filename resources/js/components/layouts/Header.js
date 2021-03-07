@@ -16,22 +16,22 @@ const Header = (props) => {
             <Container>
                 <Link to={`${PUBLIC_URL}`}>
                     <Navbar.Brand>
-                        ReactProject
+                        Community
                     </Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Link to={`${PUBLIC_URL}about`}>
-                            <Nav.Item className="text-white mr-2">공지사항</Nav.Item>
+                            <Nav.Item className="text-white mr-2">아이즈원</Nav.Item>
                         </Link>
                       
                         <Link to={`${PUBLIC_URL}boards`}>
-                            <Nav.Item className="text-white mr-2">자유게시판</Nav.Item>
+                            <Nav.Item className="text-white mr-2">세븐틴</Nav.Item>
                         </Link>
                     
                         <Link to={`${PUBLIC_URL}contact`}>
-                            <Nav.Item className="text-white mr-2">가이드</Nav.Item>
+                            <Nav.Item className="text-white mr-2">데이식스</Nav.Item>
                         </Link>
                       
                         {

@@ -42,8 +42,6 @@ class BoardEdit extends React.Component{
                 description:"",
                 isLoading:false,
             });
-            // history.push(`${PUBLIC_URL}boards`);
-            // alert('Board Added');
             console.log('he');
             this.props.onCompleteBoardEdit();
 
